@@ -1,0 +1,153 @@
+
+
+
+#menu2
+{
+  display: none;
+  position: fixed;
+
+  top: 40px;
+
+  left: 144px;
+  width: 200px;
+
+box-shadow: 5px 5px grey;
+
+  z-index: 1;
+opacity: 0.8;
+
+background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+
+
+#menuToggle
+{
+  display: block;
+  position: absolute;
+  float: right;
+  top: 0px;
+  right: 0px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#clickIt span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: rgb(204,204,102);
+  border-radius: 3px;
+
+  z-index: 1;
+
+  
+             
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: relative;
+  width: 200px;
+  margin: 0px 0 0 0px;
+  padding: 0px;
+  padding-top: 0px;
+
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.0,0.0,0.00,0.0);
+}
+
+#menu2 li
+{
+  padding: 10px 0;
+  font-size: 22px;
+list-style: none;
+color: black;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
