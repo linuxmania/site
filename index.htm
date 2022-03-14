@@ -1,11 +1,13 @@
+
 <html><head>
-	
- <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+<!--link rel=stylesheet type="text/css" href="linux2.css" -->
 
 <style type="text/css">
-a {  
-text-decoration: none;  
-}  
+
+a {
+text-decoration: none;
+}
 a:link {
 COLOR: rgb(204,204,102);
 }
@@ -18,87 +20,214 @@ COLOR: #FFFFFF;
 a:active {
 COLOR: rgb(204,204,102);
 }
-</style> 
 
-<title>Linuxmania</title>
+#menu2
+{
+  display: none;
+  position: fixed;
 
-</head><body bgcolor="#000000">
-<table  align="center">
-<tr><td align = left>
-<font style='font-size:20px; color:rgb(204,204,102)' ><b>&nbsp;
-Linuxmania
-</b></font>
-</td></tr>
-<tr><td>
+  top: 50px;
 
-<table  align=center background='./linux.jpg' border = 1>
-<tr><td width=360 height=384 valign=top align=right>
-<br><br><b>Free - as in
-&nbsp;&nbsp;
-<br><i>Free Speech&nbsp;&nbsp;</i><br>Software
-&nbsp;&nbsp;&nbsp;
-</b>
-</td></tr>
-</table>
 
-</td></tr>
-</table>
+/*  left: 144px; */
+  width: 160px;
 
-<table align=center>
-<tr>
-<td colspan=2>
-<font color='#FFFFFF' style='font-size:14px;'>Consulting Services for Open Source and Free Software (GNU/Linux) development and integration.
-</font>
-</td></tr>
+  left: 50%;
+          margin-left: 10px;/* Negative half of width. */
 
-<tr>
-<td>
-<font color='#FFFFFF' style='font-size:11px;'>
-&nbsp;Empowered by the 
-<a href='http://fsf.org' target=blank>
-Free <br>Software Foundation
-</font>
-</td>
+box-shadow: 5px 5px grey;
 
-<td align=right valign=top>
-<font color='#FFFFFF' style='font-size:11px;'>
-Contact:
+  z-index: 1;
+opacity: 0.8;
+
+background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+#menu2 li
+{
+  padding: 10px 0;
+  font-size: 18px;
+list-style: none;
+color: black;
+}
+
+#clickIt span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: rgb(204,204,102);
+  border-radius: 3px;
+
+  z-index: 1;
+
+
+
+}
+
+body {background-color: #000000;}
+
+</style>
+
+
 <script type="text/javascript">
-//<![CDATA[
-<!--
-var x="function f(x,y){var i,o=\"\",l=x.length;for(i=0;i<l;i++){if(i==22)y+=" +
-"i;y%=127;o+=String.fromCharCode(x.charCodeAt(i)^(y++));}return o;}f(\"pbvzn" +
-"rss>y\\010Y\\013XRDT\\007A\\005E\\026`ah**z0g&.\\\"*:'|=o<8n!?15?s$s=7\\001" +
-"\\023!\\014\\000\\000'\\023@\\005EZ_DORIC[\\010\\000\\007\\017\\014\\000RG\\"+
-"003G\\021U=m9~gdrd`!o\\\"wpsi\\177c:z)y;&#p$&,&w2\\r\\010YL\\017\\030^\\tKA" +
-"KYmY\\006F\\031\\nOAQACEV\\031U\\025OH\\\\L43jsh**ns4,cnd}}a}\\016q\\000\\0" +
-"13\\000\\022\\021\\rjjl\\001\\002\\030;RSS89\\010;4^Z[01#\\\\@A./DDF+$OKK !" +
-"@3$+670648UV52fx8!!NOdgJKu3F9@A':\\037KI\\027\\026\\025z{\\026\\035\\006\\0" +
-"32\\036\\001\\006Oj{f|mjx\\002\\010\\tfg\\177hna\\021\\006\\000tuu\\032\\03" +
-"3\\n\\010\\004y|}\\022\\023\\032\\022\\025\\032\\036\\013\\006\\035\\022\\0" +
-"27;\\022+y,7\\027\\022\\032\\026Q/N\\025\\036\\t\\023[\\002_AK\\025\\027\\0" +
-"36\\017\\032\\001\\004]\\017\\025\\036\\026OLN\\\\]404YZ4:9VW;>>SLM0;rh-x8w" +
-"hnhxlb\\033\\010\\013\\010\\017\\\\\\016y\\001@\\002_mHJ@sCS[W\\033N\\037]]" +
-"UxN\\\\V|-.0%j\\\"(.:=\\031vg\\\"uxb`ov-n?js shnlcb\\tI\\004\\n\\037LML\\00" +
-"1R\\006W\\005V^R\\031Y\\000\\034\\022N\\036\\003\\037\\027\\037\\027R\\005C" +
-"l-^!X';h$`*ym{u&i=j;r5xxqmyui{<6\",22)"                                      ;
-while(x=eval(x));
-//-->
-//]]>
-</script>
-<br>   <br>
-	<a href='/bj'>
-BlackJack
-    </a>
-</font>
-</td></tr>
+var isDisplayed = false;
+function doShow(){
 
-<!-- tr>
-<td colspan=2>
-<a href='./sites.htm'><font style='font-size:11px;'>&nbsp;&nbsp;valuable sites</font></a>
+	// alert ('hi');
+	if(isDisplayed){
+
+	document.getElementById('menu2').style.display = 'none';
+	isDisplayed = false;
+	} else {
+		document.getElementById('menu2').style.display = 'block';
+		isDisplayed = true;
+		}
+		}
+</script>
+
+
+</head><body bgcolor>
+
+  <nav role="navigation">
+    <div id="menu2">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+
+
+      <!--
+      Some spans to act as a hamburger.
+
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+
+
+      <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+
+      <ul >
+        <a href="/classes"><li><b>Classes</b></li></a>
+      </ul>
+      <ul >
+        <a href="/poker"><li><b>Demo</b></li></a>
+      </ul>
+    </div>
+
+  </nav>
+
+  <table  align="center" width=348px>
+  <tr><td align = left style="padding-top: 10px; padding-bottom: 10px;">
+  <font style='font-size:20px; color:rgb(204,204,102)' ><b>
+  Linuxmania
+  </b></font>
+  </td>
+
+  <td align = right>
+  	<a id="clickIt"
+  onclick="doShow();"
+    >
+    	   <span></span>
+    	   <span></span>
+    	   <span></span>
+  </a>
+
+  </td></tr>
+  </table>
+
+  <!--table  align=center background='./linux.jpg' border = 1>
+  <tr><td width=360 height=384 valign=top align=right -->
+
+  <table width=352 height=390 align=center background='./linux.jpg' border = 1>
+<tr><td>
+  <table width=348 height=380 align=center>
+
+
+  <tr><td valign=top align=right>
+
+  <br><br><b>Free - as in
+  &nbsp;&nbsp;
+  <br><i>Free Speech&nbsp;&nbsp;</i><br>Software
+  &nbsp;&nbsp;&nbsp;
+  </b>
+  </td></tr>
+
+  <tr><td valign=bottom align=left style="padding-left: 6px; padding-right: 4px;">
+
+    <font color='#000000' style='font-size:14px;'><b>Consulting Services for Free and Open Source Software (GNU/Linux) development and integration.
+    </b></font>
+
+
+  </table>
+
+</td><tr>
+</table>
+
+
+  <table align=center width=348>
+  <!--tr>
+  <td>
+  <font color='#FFFFFF' style='font-size:14px;'>Consulting Services for Free and Open Source Software (GNU/Linux) development and integration.
+  </font>
 </td></tr -->
 
+  <tr>
+  <td valign=top align=center style="padding-top: 6px;">
+  <font color='#FFFFFF' style='font-size:13px;'>
+  &nbsp;Empowered by the
+  <a href='http://fsf.org' target=blank>
+  Free Software Foundation
+  </a>
+  </font>
+  </td>
 
-</table>
+  </tr><tr>
 
-<body><html>
+  <td align=center valign=top>
+  <font color='#FFFFFF' style='font-size:13px;'>
+  Contact:
+  <script type="text/javascript">
+  //<![CDATA[
+  <!--
+  var x="function f(x,y){var i,o=\"\",l=x.length;for(i=0;i<l;i++){if(i==22)y+=" +
+  "i;y%=127;o+=String.fromCharCode(x.charCodeAt(i)^(y++));}return o;}f(\"pbvzn" +
+  "rss>y\\010Y\\013XRDT\\007A\\005E\\026`ah**z0g&.\\\"*:'|=o<8n!?15?s$s=7\\001" +
+  "\\023!\\014\\000\\000'\\023@\\005EZ_DORIC[\\010\\000\\007\\017\\014\\000RG\\"+
+  "003G\\021U=m9~gdrd`!o\\\"wpsi\\177c:z)y;&#p$&,&w2\\r\\010YL\\017\\030^\\tKA" +
+  "KYmY\\006F\\031\\nOAQACEV\\031U\\025OH\\\\L43jsh**ns4,cnd}}a}\\016q\\000\\0" +
+  "13\\000\\022\\021\\rjjl\\001\\002\\030;RSS89\\010;4^Z[01#\\\\@A./DDF+$OKK !" +
+  "@3$+670648UV52fx8!!NOdgJKu3F9@A':\\037KI\\027\\026\\025z{\\026\\035\\006\\0" +
+  "32\\036\\001\\006Oj{f|mjx\\002\\010\\tfg\\177hna\\021\\006\\000tuu\\032\\03" +
+  "3\\n\\010\\004y|}\\022\\023\\032\\022\\025\\032\\036\\013\\006\\035\\022\\0" +
+  "27;\\022+y,7\\027\\022\\032\\026Q/N\\025\\036\\t\\023[\\002_AK\\025\\027\\0" +
+  "36\\017\\032\\001\\004]\\017\\025\\036\\026OLN\\\\]404YZ4:9VW;>>SLM0;rh-x8w" +
+  "hnhxlb\\033\\010\\013\\010\\017\\\\\\016y\\001@\\002_mHJ@sCS[W\\033N\\037]]" +
+  "UxN\\\\V|-.0%j\\\"(.:=\\031vg\\\"uxb`ov-n?js shnlcb\\tI\\004\\n\\037LML\\00" +
+  "1R\\006W\\005V^R\\031Y\\000\\034\\022N\\036\\003\\037\\027\\037\\027R\\005C" +
+  "l-^!X';h$`*ym{u&i=j;r5xxqmyui{<6\",22)"                                      ;
+  while(x=eval(x));
+  //-->
+  //]]>
+  </script>
+  </font>
+  </td></tr>
+
+  <!-- tr>
+  <td colspan=2>
+  <a href='./sites.htm'><font style='font-size:11px;'>&nbsp;&nbsp;valuable sites</font></a>
+  </td></tr -->
+
+
+  </table>
+
+</body></html>
